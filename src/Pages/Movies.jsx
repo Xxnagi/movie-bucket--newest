@@ -1,6 +1,6 @@
 // Movies.jsx
 import React, { useEffect, useState } from "react";
-import { getMovieList } from "../api.JS"; // Update the path as needed
+import { getMovieList } from "../api-util.js"; // Update the path as needed
 import Pagination from "../component/Pagination";
 
 const Movies = () => {
