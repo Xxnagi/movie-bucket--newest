@@ -7,6 +7,7 @@ import { GlobalContext } from "../context/GlobalState";
 const Detail = () => {
   const [detail, setDetail] = useState(null);
   const { id } = useParams();
+
   const { addMovieToWatchlist } = useContext(GlobalContext);
 
   useEffect(() => {
