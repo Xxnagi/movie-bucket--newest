@@ -10,9 +10,11 @@ const getLocalStorageArray = (key) => {
     return [];
   }
 };
+
 const initialState = {
   watchlist: getLocalStorageArray("watchlist") || [],
   watched: getLocalStorageArray("watched") || [],
+  bookmark: getLocalStorageArray("bookmark") || [],
 };
 
 export const GlobalContext = createContext(initialState);
