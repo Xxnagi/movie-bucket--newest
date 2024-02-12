@@ -1,6 +1,6 @@
 // Movies.jsx
 import React, { useEffect, useState, useContext } from "react";
-import { getMovieList } from "../api-util.js";
+import { getMovieList } from "../api-util.JS";
 import Pagination from "../component/Pagination";
 import { GlobalContext } from "../context/GlobalState.jsx";
 import { Link } from "react-router-dom";
@@ -48,14 +48,6 @@ const Movies = () => {
                   ) : (
                     <div className="filler-poster"></div>
                   )}
-                  <div className="inner-card-controls">
-                    <button
-                      className="ctrl-btn"
-                      onClick={() => addMovieToWatchlist(movie)}
-                    >
-                      <i className="fa-solid fa-plus"></i>
-                    </button>
-                  </div>
                 </div>
               </Link>
             ))}
