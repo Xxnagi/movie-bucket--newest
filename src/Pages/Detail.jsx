@@ -8,7 +8,7 @@ const Detail = () => {
   const [detail, setDetail] = useState(null);
   const { id } = useParams();
 
-  const { addMovieToWatchlist } = useContext(GlobalContext);
+  const { addMovieToWatchlist, watchlist } = useContext(GlobalContext);
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -28,6 +28,8 @@ const Detail = () => {
     return <Loading></Loading>;
   }
 
+  let storedMovie = watchlist.find((o) => o.id === detail.id);
+  const watchlistDisabled = storedMovie ? true : false;
   return (
     <div className="movie-page">
       <div className="container">
@@ -51,12 +53,13 @@ const Detail = () => {
                 </button>
               ))}
             </div>
-            <div
+            <button
               className="btn mt-4"
+              disabled={watchlistDisabled}
               onClick={() => addMovieToWatchlist(detail)}
             >
               Add To Watchlist
-            </div>
+            </button>
           </div>
         </div>
       </div>
